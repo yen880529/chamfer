@@ -3,56 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>導角引孔計算機</title>
-  <style>
-    body {
-      background-color: #2e2e2e;
-      color: #f0f0f0;
-      font-family: "Microsoft JhengHei", sans-serif;
-      padding: 20px;
-    }
-    label, select, input {
-      font-size: 16px;
-      margin: 10px 0;
-      display: block;
-    }
-    input, select {
-      padding: 8px;
-      width: 200px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4E9A97;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #6DB3B0;
-    }
-    .result {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="ui.css">
 </head>
 <body>
-  <h1>導角引孔加工深度計算機</h1>
+  <div class="container">
+    <h1>導角引孔加工深度計算機</h1>
 
-  <label for="tool">選擇工具角度：</label>
-  <select id="angle">
-    <option value="90">中心鑽（90°）</option>
-    <option value="118">鑽頭（118°）</option>
-  </select>
+    <div class="input-group">
+      <label for="angle">選擇工具角度：</label>
+      <select id="angle">
+        <option value="90">中心鑽（90°）</option>
+        <option value="118">鑽頭（118°）</option>
+      </select>
+    </div>
 
-  <label for="diameter">輸入導角直徑 (mm)：</label>
-  <input type="number" id="diameter" step="0.01" placeholder="例如：25">
+    <div class="input-group">
+      <label for="diameter">輸入導角直徑 (mm)：</label>
+      <input type="number" id="diameter" step="0.01" placeholder="例如：25">
+    </div>
 
-  <button onclick="calculateDepth()">計算深度</button>
+    <div class="button-group">
+      <button onclick="calculateDepth()">計算深度</button>
+    </div>
 
-  <div class="result" id="result"></div>
+    <div class="result" id="result"></div>
+  </div>
 
   <script>
     function calculateDepth() {
